@@ -3,10 +3,11 @@
 A minimal Chrome (Manifest V3) extension that reads the current page — or your
 selected text — aloud using **ElevenLabs** or **Cloudflare Workers AI**.
 
+- **Two providers:** **ElevenLabs** (voices/models like `eleven_flash_v2_5`,
+  `turbo`, `multilingual_v2`) and **Cloudflare Workers AI** (MeloTTS, Deepgram
+  Aura) — pick one in Settings.
 - Reads your **selection** if you've highlighted text, otherwise auto-extracts
   the page's main `<article>`/`<main>` content.
-- Default model: `eleven_flash_v2_5` (cheap, low latency). Switch to
-  `turbo`/`multilingual_v2` in Settings.
 - Long pages are chunked and played gaplessly; playback continues after the
   popup closes (audio runs in an offscreen document).
 - Provider credentials are stored in `chrome.storage.local` — local to this
