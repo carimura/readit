@@ -1,6 +1,6 @@
 # Read It - A Chrome extension that reads the current page (or selection) out loud.
 
-Currently supports [ElevenLabs](https://elevenlabs.io) and [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) (through [Cloudflare AI Gateway](https://developers.cloudflare.com/ai-gateway/)).
+Currently supports [ElevenLabs](https://elevenlabs.io) and [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/) (through [AI Gateway](https://developers.cloudflare.com/ai-gateway/)).
 
 Both bring your own key.
 
