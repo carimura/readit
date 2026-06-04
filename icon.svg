@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#2D7FF9"/>
+  <!-- bell, flaring to the right -->
+  <polygon points="42,52 42,76 90,94 90,34" fill="#ffffff"/>
+  <!-- mouthpiece -->
+  <rect x="26" y="56" width="18" height="16" rx="4" fill="#ffffff"/>
+  <!-- sound waves -->
+  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round">
+    <path d="M100 48 q10 16 0 32" />
+    <path d="M110 40 q16 24 0 48" />
+  </g>
+</svg>

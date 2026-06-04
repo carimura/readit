@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Read It — Settings</title>
+    <style>
+      body { font: 14px system-ui, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 16px; color: #222; }
+      label { display: block; margin: 18px 0 4px; font-weight: 600; }
+      input, select { width: 100%; padding: 8px; font: inherit; box-sizing: border-box; border: 1px solid #ccc; border-radius: 6px; }
+      .hint { color: #777; font-size: 12px; margin-top: 4px; }
+      code { background: #f2f2f2; padding: 1px 4px; border-radius: 4px; }
+      [hidden] { display: none; }
+      button { margin-top: 22px; padding: 9px 16px; font: inherit; cursor: pointer; border-radius: 6px; border: 1px solid #111; background: #111; color: #fff; }
+      #saved { color: #0a0; margin-left: 10px; }
+    </style>
+  </head>
+  <body>
+    <h2>Read It — Settings</h2>
+
+    <label for="provider">Provider</label>
+    <select id="provider">
+      <option value="elevenlabs">ElevenLabs</option>
+      <option value="cloudflare">Cloudflare Workers AI</option>
+    </select>
+
+    <section id="elevenlabs-fields">
+      <label for="apiKey">ElevenLabs API key</label>
+      <input id="apiKey" type="password" placeholder="xi-..." autocomplete="off" />
+      <div class="hint">Stored locally in this browser only — never sent anywhere except the provider.</div>
+
+      <label for="voiceId">Voice ID</label>
+      <input id="voiceId" type="text" placeholder="e.g. 21m00Tcm4TlvDq8ikWAM" />
+      <div class="hint">Paste the voice ID from your ElevenLabs voice settings.</div>
+
+      <label for="model">Model</label>
+      <select id="model">
+        <option value="eleven_flash_v2_5">eleven_flash_v2_5 — cheapest, fast (default)</option>
+        <option value="eleven_turbo_v2_5">eleven_turbo_v2_5 — mid cost/quality</option>
+        <option value="eleven_multilingual_v2">eleven_multilingual_v2 — highest quality, ~2x cost</option>
+      </select>
+    </section>
+
+    <section id="cloudflare-fields" hidden>
+      <label for="cfModel">Model</label>
+      <input id="cfModel" type="text" placeholder="@cf/myshell-ai/melotts" />
+      <div class="hint">Any Workers AI text-to-speech model (starts with <code>@cf/</code>).</div>
+
+      <label for="cfSpeaker">Voice / speaker</label>
+      <input id="cfSpeaker" type="text" placeholder="e.g. luna" />
+      <div class="hint">Speaker for Deepgram Aura models — e.g. <code>luna</code> (default) or <code>orpheus</code>.
+        <a href="https://developers.deepgram.com/docs/tts-models" target="_blank" rel="noopener">All voices</a>.
+        MeloTTS has no voice selection — ignored.</div>
+
+      <label for="cfGatewayId">AI Gateway ID</label>
+      <input id="cfGatewayId" type="text" placeholder="my-gateway" />
+      <div class="hint">Sent as the <code>cf-aig-gateway-id</code> header. Leave blank to call Workers AI directly.</div>
+
+      <label for="cfAccountId">Cloudflare account ID</label>
+      <input id="cfAccountId" type="text" placeholder="32-char account ID" />
+
+      <label for="cfApiToken">Cloudflare API token</label>
+      <input id="cfApiToken" type="password" placeholder="token with Workers AI access" autocomplete="off" />
+      <div class="hint">Stored locally in this browser only.</div>
+    </section>
+
+    <label for="speed">Playback speed</label>
+    <select id="speed"></select>
+    <div class="hint">Pitch is preserved at any speed.</div>
+
+    <div><button id="save">Save</button><span id="saved"></span></div>
+    <script src="options.js"></script>
+  </body>
+</html>

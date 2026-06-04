@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { font: 13px system-ui, sans-serif; width: 220px; padding: 12px; margin: 0; }
+      button { width: 100%; padding: 8px; margin: 4px 0; font: inherit; cursor: pointer; border-radius: 6px; border: 1px solid #ccc; background: #f7f7f7; }
+      button.primary { background: #111; color: #fff; border-color: #111; }
+      [hidden] { display: none; }
+      #status { margin: 8px 0 2px; color: #666; min-height: 16px; }
+      #progress { color: #888; font-variant-numeric: tabular-nums; }
+      #progress div { line-height: 1.5; }
+      #opts { display: block; text-align: right; color: #06c; cursor: pointer; font-size: 12px; margin-top: 6px; }
+    </style>
+  </head>
+  <body>
+    <button id="action" class="primary">▶ Read page</button>
+    <button id="stop" hidden>■ Stop</button>
+    <div id="status"></div>
+    <div id="progress" hidden>
+      <div id="proc"></div>
+      <div id="read"></div>
+    </div>
+    <a id="opts">Settings</a>
+    <script src="popup.js"></script>
+  </body>
+</html>
